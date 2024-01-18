@@ -164,3 +164,15 @@ fun CenterAlignedTopAppBarExample() {
 fun ScrollContent(innerPadding: PaddingValues) {
 
 }
+@Composable
+fun DrawCubic() {
+    val path = remember { Path() }
+    path.cubicTo(x1 = x1, y1 = y1, x2 = x2, y2 = y2, x3 = x3, y3 = y3)
+    Canvas(modifier = Modifier.fillMaxSize()) {
+        drawPath(
+            color = Color.Green,
+            path = path,
+            style = Stroke(width = 3.dp.toPx())
+        )
+    }
+}
